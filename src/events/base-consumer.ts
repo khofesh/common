@@ -25,7 +25,7 @@ export abstract class Consumer<T extends Event> {
 
     await this.channel.bindQueue(ok.queue, this.exchange, key);
 
-    await this.channel.consume(ok.queue, logMessage, { noAck: true });
+    await this.channel.consume(ok.queue, logMessage, { noAck: false });
 
     console.log(" [*] Waiting for logs. To exit press CTRL+C");
 
