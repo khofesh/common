@@ -17,3 +17,4 @@ export * from "./events/exchanges";
 export * from "./events/routing-keys";
 export * from "./events/ticket-created-event";
 export * from "./events/ticket-updated-event";
+export * from "./events/types/order-status";
