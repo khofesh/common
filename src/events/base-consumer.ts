@@ -16,6 +16,8 @@ export abstract class Consumer<T extends Event> {
     this.channel = channel;
   }
 
+  abstract handleMessage(msg: amqp.ConsumeMessage | null): void;
+
   async consume(key: T["routingKey"]): Promise<void> {
     await this.channel.assertExchange(this.exchange, "direct", {
       durable: true,
@@ -25,16 +27,16 @@ export abstract class Consumer<T extends Event> {
 
     await this.channel.bindQueue(ok.queue, this.exchange, key);
 
-    await this.channel.consume(ok.queue, logMessage, { noAck: false });
+    await this.channel.consume(ok.queue, this.handleMessage, { noAck: false });
 
     console.log(" [*] Waiting for logs. To exit press CTRL+C");
 
-    function logMessage(msg: amqp.ConsumeMessage | null) {
-      console.log(
-        " [x] %s: '%s'",
-        msg?.fields.routingKey,
-        msg?.content.toString()
-      );
-    }
+    // function logMessage(msg: amqp.ConsumeMessage | null) {
+    //   console.log(
+    //     " [x] %s: '%s'",
+    //     msg?.fields.routingKey,
+    //     msg?.content.toString()
+    //   );
+    // }
   }
 }
