@@ -4,4 +4,5 @@ export enum Exchanges {
   OrderUpdated = "order:updated",
   OrderCreated = "order:create",
   OrderCanceled = "order:canceled",
+  ExpirationComplete = "expiration:complete",
 }
