@@ -10,7 +10,7 @@ interface Event {
 
 export abstract class Consumer<T extends Event> {
   abstract exchange: T["exchange"];
-  private channel: amqp.Channel;
+  protected channel: amqp.Channel;
 
   constructor(channel: amqp.Channel) {
     this.channel = channel;
