@@ -1,6 +1,6 @@
 export enum RoutingKeys {
   Orders = "orders",
   Tickets = "tickets",
-  Paymets = "paymets",
+  Payments = "payments",
   Expiration = "expiration",
 }
