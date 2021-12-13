@@ -22,3 +22,7 @@ export * from "./events/order-canceled-event";
 export * from "./events/order-created-event";
 export * from "./events/expiration-complete-event";
 export * from "./events/payment-created-event";
+export * from "./events/logging-debug-event";
+export * from "./events/logging-error-event";
+export * from "./events/logging-info-event";
+export * from "./events/logging-warn-event";
