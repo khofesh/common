@@ -6,4 +6,8 @@ export enum Exchanges {
   OrderCanceled = "order:canceled",
   ExpirationComplete = "expiration:complete",
   PaymentCreated = "payment:created",
+  LoggingInfo = "logging:info",
+  LoggingError = "logging:error",
+  LoggingWarn = "logging:warn",
+  LoggingDebug = "logging:debug",
 }

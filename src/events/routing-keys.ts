@@ -3,4 +3,5 @@ export enum RoutingKeys {
   Tickets = "tickets",
   Payments = "payments",
   Expiration = "expiration",
+  Logging = "logging",
 }
